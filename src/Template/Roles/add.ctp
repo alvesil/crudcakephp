@@ -1,23 +1,28 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Role $role
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Html->link(__('Listar Permissões'), ['action' => 'index'], array('class' => 'bi bi-file-earmark-text', 'style'=>'font-size:16pt; ')) ?></li>
+        <li><?= $this->Html->link(__('Listar Permissões'), ['action' => 'index'], array('class' => 'bi bi-file-earmark-text', 'style' => 'font-size:16pt; ')) ?></li>
     </ul>
-</nav>
-<div class="roles form large-9 medium-8 columns content">
+</nav> -->
+<div class="container-fluid text-center">
     <?= $this->Form->create($role) ?>
-    <fieldset>
-        <legend><?= __('Adicionar Permissão') ?></legend>
-        <?php
-            echo $this->Form->control('role', ['label' => 'Permissão']);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Gravar')) ?>
+    <h1>Adicionar Permissão</h1>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPermissao" name="role" placeholder="Permissão">
+                <label for="floatingPermissao">Permissão</label>
+            </div>
+        </div>
+    </div>
+    <?= $this->Form->button(__('Gravar'), ["class" => "btn btn-primary mt-2"]) ?>
+
     <?= $this->Form->end() ?>
 </div>
